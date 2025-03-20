@@ -1,0 +1,12 @@
+contato = {}
+
+
+nome = input('Digite seu nome: ')
+contato['nome'] = nome
+tell = input('Digite seu telefone: ')
+contato['tell'] = tell
+email = input('Digite seu email: ')
+contato['email'] = email
+
+
+print(contato)
