@@ -1,0 +1,4 @@
+def media(numero_1, numero_2, numero_3):
+    return (numero_1 + numero_2 + numero_3) / 3
+
+print(media(3,4,5))
