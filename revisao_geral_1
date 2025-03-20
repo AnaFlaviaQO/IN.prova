@@ -1,0 +1,11 @@
+dicionario = {}
+
+produtos = ''
+valor = 0
+
+for produto in range(5):
+    produto = input('digite o nome do produto: ')
+    valor = input('adicione o valor do produto:')
+    dicionario[produto]= valor
+    
+    print(dicionario)
