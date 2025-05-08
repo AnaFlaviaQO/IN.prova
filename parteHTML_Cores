@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header>
+    <h1>Colores</h1>
+  </header>
+
+  <section>
+    <h2>Bem-vindo!</h2>
+    <p>Esta é uma página para preciar cores.</p>
+    <p>aproveite</p> <br>
+    <button>Clique Aqui</button>
+  </section>
+
+  <aside>
+    <h3>Links</h3>
+    <a href="#">Link 1</a><br>
+    <a href="#">Link 2</a>
+  </aside>
+
+  <footer>
+    <p>&copy; colores</p>
+  </footer>
+
+</body>
+</html>
