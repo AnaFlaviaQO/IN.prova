@@ -1,0 +1,15 @@
+h1 {
+    color: #F06292;
+}
+
+h2 {
+    color:#4CAF50;
+}
+
+p {
+    color: #9C27B0;
+}
+
+button {
+    color: #4CAF50;
+}
