@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portifolio</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Ana Flavia Santos
+        </h1>
+    </header>
+    <section>
+        <h2>
+            Sobre mim:
+        </h2>
+        <p>
+            Sou uma desenvolvedora que gosta de trabalhar em equipe.
+        </p>
+        <h3>
+            Formacao academica:
+        </h3>
+        <p>
+            Ensino medio completo.
+            Curso de Analise e Desenvolvimento de Sistema.
+        </p>
+        <h3>
+            Experiencia profeissional:
+        </h3>
+        <p>
+            Trabalhei com pequenas empresas. <br>
+            Lojas de brinquedo.
+        </p>
+        <h3>
+            Soft-Skills:
+        </h3>
+        <p>
+            Trabalho em equipe. <br>
+            Bom humor. <br>
+            Curiosa. <br>
+            Eficiente. <br>
+            Aberta a aprender.
+        </p>
+    </section>
+</body>
+</html>
