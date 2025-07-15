@@ -1,0 +1,34 @@
+let lista = [];
+
+while (true) {
+  let opcao = prompt("O que você quer fazer?\n1 - Adicionar\n2 - Remover\n3 - Atualizar\n4 - Mostrar\n5 - Sair");
+
+  if (opcao === "1") {
+    let item = prompt("Digite o item para adicionar:");
+    lista.push(item);
+    console.log(item + " adicionado.");
+  } else if (opcao === "2") {
+    let indice = prompt("Digite o índice do item para remover:");
+    indice = Number(indice);
+    lista.splice(indice, 1);
+    console.log("Item removido.");
+  } else if (opcao === "3") {
+    let indice = prompt("Digite o índice do item para atualizar:");
+    indice = Number(indice);
+    let novoItem = prompt("Digite o novo nome do item:");
+    lista[indice] = novoItem;
+    console.log("Item atualizado.");
+  } else if (opcao === "4") {
+    console.log("Lista de compras:");
+    let i = 0;
+    for (let item of lista) {
+      console.log(i + ": " + item);
+      i++;
+    }
+  } else if (opcao === "5") {
+    console.log("Saindo...");
+    break;
+  } else {
+    console.log("Opção inválida.");
+  }
+}
