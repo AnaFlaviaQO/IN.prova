@@ -1,0 +1,43 @@
+let tarefas = [];
+
+while (true) {
+  let escolha = prompt(
+    "O que você quer fazer?\n1 - Adicionar tarefa\n2 - Listar tarefas\n3 - Remover tarefa\n4 - Concluir tarefa\n5 - Sair"
+  );
+
+  if (escolha === "1") {
+    let tarefa = prompt("Digite a tarefa para adicionar:");
+    tarefas.push(tarefa);
+    console.log(`Tarefa "${tarefa}" adicionada.`);
+  } else if (escolha === "2") {
+    console.log("Lista de tarefas:");
+    let i = 0;
+    for (let tarefa of tarefas) {
+      console.log(i + ": " + tarefa);
+      i++;
+    }
+  } else if (escolha === "3") {
+    let indice = prompt("Digite o índice da tarefa para remover:");
+    indice = Number(indice);
+    if (indice >= 0 && indice < tarefas.length) {
+      let removida = tarefas.splice(indice, 1);
+      console.log(`Tarefa "${removida}" removida.`);
+    } else {
+      console.log("Índice inválido.");
+    }
+  } else if (escolha === "4") {
+    let indice = prompt("Digite o índice da tarefa para concluir:");
+    indice = Number(indice);
+    if (indice >= 0 && indice < tarefas.length) {
+      tarefas[indice] = "✅ " + tarefas[indice];
+      console.log(`Tarefa "${tarefas[indice]}" concluída.`);
+    } else {
+      console.log("Índice inválido.");
+    }
+  } else if (escolha === "5") {
+    console.log("Saindo do programa.");
+    break;
+  } else {
+    console.log("Opção inválida.");
+  }
+}
