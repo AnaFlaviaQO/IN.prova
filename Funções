@@ -1,0 +1,67 @@
+let tarefas = [];
+
+const adicionar = function(tarefa) {
+  tarefas.push(tarefa);
+  console.log("Tarefa '" + tarefa + "' adicionada.");
+}
+
+const listar = () => {
+  console.log("Lista de tarefas:");
+  for (let i = 0; i < tarefas.length; i++) {
+    console.log(i + ": " + tarefas[i]);
+  }
+}
+
+function mexerNaLista(funcao) {
+  funcao(tarefas);
+}
+
+while (true) {
+  let opcao = prompt(
+    "Escolha:\n1- Adicionar\n2- Listar\n3- Remover\n4- Atualizar\n5- Concluir\n6- Sair"
+  );
+
+  if (opcao === "1") {
+    let nova = prompt("Digite a tarefa:");
+    adicionar(nova);
+  } else if (opcao === "2") {
+    listar();
+  } else if (opcao === "3") {
+    mexerNaLista(function(lista) {
+      let i = Number(prompt("Índice pra remover:"));
+      if (i >= 0 && i < lista.length) {
+        let removida = lista.splice(i, 1);
+        console.log("Tarefa '" + removida + "' removida.");
+      } else {
+        console.log("Índice inválido.");
+      }
+    });
+  } else if (opcao === "4") {
+    mexerNaLista(function(lista) {
+      let i = Number(prompt("Índice pra atualizar:"));
+      if (i >= 0 && i < lista.length) {
+        let novaTarefa = prompt("Nova tarefa:");
+        lista[i] = novaTarefa;
+        console.log("Tarefa atualizada.");
+      } else {
+        console.log("Índice inválido.");
+      }
+    });
+  } else if (opcao === "5") {
+    mexerNaLista(function(lista) {
+      let i = Number(prompt("Índice pra concluir:"));
+      if (i >= 0 && i < lista.length) {
+        lista[i] = "✅ " + lista[i];
+        console.log("Tarefa concluída.");
+      } else {
+        console.log("Índice inválido.");
+      }
+    });
+  } else if (opcao === "6") {
+    console.log("Saindo...");
+    break;
+  } else {
+    console.log("Opção inválida.");
+  }
+}
+
