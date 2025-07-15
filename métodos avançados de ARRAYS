@@ -1,0 +1,36 @@
+let nomes = [];
+
+while (true) {
+  let acao = prompt(
+    "Escolha uma ação:\n1 - Adicionar nome\n2 - Filtrar nomes\n3 - Buscar nome\n4 - Transformar nomes em maiúsculas\n5 - Verificar se todos têm mais de 3 caracteres\n6 - Sair"
+  );
+
+  if (acao === "1") {
+    let nomeNovo = prompt("Digite o nome para adicionar:");
+    nomes.push(nomeNovo);
+    console.log("Lista atualizada:", nomes);
+  } else if (acao === "2") {
+    let letra = prompt("Digite a letra para filtrar os nomes que começam com ela:");
+    let filtrados = nomes.filter(n => n[0].toLowerCase() === letra.toLowerCase());
+    console.log("Nomes filtrados:", filtrados);
+  } else if (acao === "3") {
+    let nomeBusca = prompt("Digite o nome para buscar exatamente:");
+    let encontrado = nomes.find(n => n.toLowerCase() === nomeBusca.toLowerCase());
+    if (encontrado) {
+      console.log("Nome encontrado:", encontrado);
+    } else {
+      console.log("Nome não encontrado.");
+    }
+  } else if (acao === "4") {
+    let maiusculos = nomes.map(n => n.toUpperCase());
+    console.log("Nomes em maiúsculas:", maiusculos);
+  } else if (acao === "5") {
+    let todosGrandes = nomes.every(n => n.length > 3);
+    console.log("Todos os nomes têm mais de 3 caracteres?", todosGrandes);
+  } else if (acao === "6") {
+    console.log("Programa encerrado.");
+    break;
+  } else {
+    console.log("Opção inválida.");
+  }
+}
