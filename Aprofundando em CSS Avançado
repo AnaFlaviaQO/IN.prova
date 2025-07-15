@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    :root {
+      --font-size: 16px;
+      --spacing: 10px;
+    }
+
+    h1 {
+      font-size: var(--font-size);
+      margin-bottom: var(--spacing);
+    }
+
+    @media (min-width: 600px) {
+      :root {
+        --font-size: 24px;
+        --spacing: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Olá, Mundo!</h1>
+  <p>Texto simples usando variáveis CSS.</p>
+</body>
+</html>
