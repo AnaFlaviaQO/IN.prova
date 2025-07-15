@@ -1,0 +1,20 @@
+const aluno = {
+  nome: "João",
+  notas: [7, 8, 9],
+  
+  calcularMedia: function() {
+    let soma = 0;
+    for(let nota of this.notas) {
+      soma += nota;
+    }
+    return soma / this.notas.length;
+  }
+};
+
+const { nome } = aluno;
+console.log("Nome do aluno:", nome);
+
+aluno.notas = [...aluno.notas, 10];
+console.log("Notas atualizadas:", aluno.notas);
+
+console.log("Média das notas:", aluno.calcularMedia());
