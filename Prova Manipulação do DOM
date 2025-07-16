@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizador de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        input {
+            width: 70%;
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin-left: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            padding: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .concluida {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .remover {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Organizador de Tarefas</h2>
+
+    <input type="text" id="inputTarefa" placeholder="Digite sua tarefa">
+    <button id="btnAdicionar">Adicionar Tarefa</button>
+
+    <ul id="listaTarefas"></ul>
+
+    <script>
+        const inputTarefa = document.getElementById("inputTarefa");
+        const btnAdicionar = document.getElementById("btnAdicionar");
+        const listaTarefas = document.getElementById("listaTarefas");
+
+        btnAdicionar.addEventListener("click", function () {
+            if (inputTarefa.value.trim() === "") return;
+
+            const li = document.createElement("li");
+            li.textContent = inputTarefa.value;
+
+            li.addEventListener("click", function () {
+                li.classList.toggle("concluida");
+            });
+
+            const btnRemover = document.createElement("span");
+            btnRemover.textContent = "🗑️";
+            btnRemover.className = "remover";
+            btnRemover.addEventListener("click", function (e) {
+                e.stopPropagation();
+                listaTarefas.removeChild(li);
+            });
+
+            li.appendChild(btnRemover);
+            listaTarefas.appendChild(li);
+            inputTarefa.value = "";
+        });
+    </script>
+
+</body>
+</html>
