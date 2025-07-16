@@ -1,0 +1,39 @@
+const aluno = {
+    nome: "Ana",
+    idade: 17,
+    notas: [7, 8, 6],
+
+    calcularMedia: function () {
+        let soma = 0;
+        for (let nota of this.notas) {
+            soma += nota;
+        }
+        return soma / this.notas.length;
+    }
+};
+
+const { nome, idade } = aluno;
+
+aluno.notas = [...aluno.notas, 9];
+
+function verificarSituacao(media) {
+    if (media >= 7) {
+        return "Aprovado!";
+    } else {
+        return "Reprovado!";
+    }
+}
+
+console.log(`Nome: ${nome}`);
+console.log(`Idade: ${idade}`);
+
+console.log("Notas:");
+for (let nota of aluno.notas) {
+    console.log(nota);
+}
+
+const mediaFinal = aluno.calcularMedia();
+console.log(`Média Final: ${mediaFinal}`);
+
+const situacao = verificarSituacao(mediaFinal);
+console.log(`Situação: ${situacao}`);
